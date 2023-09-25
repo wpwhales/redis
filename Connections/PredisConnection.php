@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Redis\Connections;
+namespace WPWhales\Redis\Connections;
 
 use Closure;
-use Illuminate\Contracts\Redis\Connection as ConnectionContract;
+use WPWhales\Contracts\Redis\Connection as ConnectionContract;
 use Predis\Command\Argument\ArrayableArgument;
 
 /**

@@ -1,5 +1,5 @@
 {
-    "name": "illuminate/redis",
+    "name": "wpwhales/redis",
     "description": "The Illuminate Redis package.",
     "license": "MIT",
     "homepage": "https://laravel.com",
@@ -15,14 +15,14 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/collections": "^11.0",
-        "illuminate/contracts": "^11.0",
-        "illuminate/macroable": "^11.0",
-        "illuminate/support": "^11.0"
+        "wpwhales/collections": "dev-master",
+        "wpwhales/contracts": "dev-master",
+        "wpwhales/macroable": "dev-master",
+        "wpwhales/support": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Illuminate\\Redis\\": ""
+            "WPWhales\\Redis\\": ""
         }
     },
     "suggest": {

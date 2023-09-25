@@ -1,13 +1,13 @@
 <?php
 
-namespace Illuminate\Redis\Connections;
+namespace WPWhales\Redis\Connections;
 
 use Closure;
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Redis\Events\CommandExecuted;
-use Illuminate\Redis\Limiters\ConcurrencyLimiterBuilder;
-use Illuminate\Redis\Limiters\DurationLimiterBuilder;
-use Illuminate\Support\Traits\Macroable;
+use WPWhales\Contracts\Events\Dispatcher;
+use WPWhales\Redis\Events\CommandExecuted;
+use WPWhales\Redis\Limiters\ConcurrencyLimiterBuilder;
+use WPWhales\Redis\Limiters\DurationLimiterBuilder;
+use WPWhales\Support\Traits\Macroable;
 
 abstract class Connection
 {
@@ -32,7 +32,7 @@ abstract class Connection
     /**
      * The event dispatcher instance.
      *
-     * @var \Illuminate\Contracts\Events\Dispatcher
+     * @var \WPWhales\Contracts\Events\Dispatcher
      */
     protected $events;
 
@@ -50,7 +50,7 @@ abstract class Connection
      * Funnel a callback for a maximum number of simultaneous executions.
      *
      * @param  string  $name
-     * @return \Illuminate\Redis\Limiters\ConcurrencyLimiterBuilder
+     * @return \WPWhales\Redis\Limiters\ConcurrencyLimiterBuilder
      */
     public function funnel($name)
     {
@@ -61,7 +61,7 @@ abstract class Connection
      * Throttle a callback for a maximum number of executions over a given duration.
      *
      * @param  string  $name
-     * @return \Illuminate\Redis\Limiters\DurationLimiterBuilder
+     * @return \WPWhales\Redis\Limiters\DurationLimiterBuilder
      */
     public function throttle($name)
     {
@@ -185,7 +185,7 @@ abstract class Connection
     /**
      * Get the event dispatcher used by the connection.
      *
-     * @return \Illuminate\Contracts\Events\Dispatcher
+     * @return \WPWhales\Contracts\Events\Dispatcher
      */
     public function getEventDispatcher()
     {
@@ -195,7 +195,7 @@ abstract class Connection
     /**
      * Set the event dispatcher instance on the connection.
      *
-     * @param  \Illuminate\Contracts\Events\Dispatcher  $events
+     * @param  \WPWhales\Contracts\Events\Dispatcher  $events
      * @return void
      */
     public function setEventDispatcher(Dispatcher $events)

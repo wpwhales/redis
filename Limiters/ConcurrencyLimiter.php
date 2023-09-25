@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Redis\Limiters;
+namespace WPWhales\Redis\Limiters;
 
-use Illuminate\Contracts\Redis\LimiterTimeoutException;
-use Illuminate\Support\Sleep;
-use Illuminate\Support\Str;
+use WPWhales\Contracts\Redis\LimiterTimeoutException;
+use WPWhales\Support\Sleep;
+use WPWhales\Support\Str;
 use Throwable;
 
 class ConcurrencyLimiter
@@ -12,7 +12,7 @@ class ConcurrencyLimiter
     /**
      * The Redis factory implementation.
      *
-     * @var \Illuminate\Redis\Connections\Connection
+     * @var \WPWhales\Redis\Connections\Connection
      */
     protected $redis;
 
@@ -40,7 +40,7 @@ class ConcurrencyLimiter
     /**
      * Create a new concurrency limiter instance.
      *
-     * @param  \Illuminate\Redis\Connections\Connection  $redis
+     * @param  \WPWhales\Redis\Connections\Connection  $redis
      * @param  string  $name
      * @param  int  $maxLocks
      * @param  int  $releaseAfter
@@ -62,7 +62,7 @@ class ConcurrencyLimiter
      * @param  int  $sleep
      * @return mixed
      *
-     * @throws \Illuminate\Contracts\Redis\LimiterTimeoutException
+     * @throws \WPWhales\Contracts\Redis\LimiterTimeoutException
      * @throws \Throwable
      */
     public function block($timeout, $callback = null, $sleep = 250)

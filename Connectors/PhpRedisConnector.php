@@ -1,13 +1,13 @@
 <?php
 
-namespace Illuminate\Redis\Connectors;
+namespace WPWhales\Redis\Connectors;
 
-use Illuminate\Contracts\Redis\Connector;
-use Illuminate\Redis\Connections\PhpRedisClusterConnection;
-use Illuminate\Redis\Connections\PhpRedisConnection;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Redis as RedisFacade;
-use Illuminate\Support\Str;
+use WPWhales\Contracts\Redis\Connector;
+use WPWhales\Redis\Connections\PhpRedisClusterConnection;
+use WPWhales\Redis\Connections\PhpRedisConnection;
+use WPWhales\Support\Arr;
+use WPWhales\Support\Facades\Redis as RedisFacade;
+use WPWhales\Support\Str;
 use LogicException;
 use Redis;
 use RedisCluster;
@@ -19,7 +19,7 @@ class PhpRedisConnector implements Connector
      *
      * @param  array  $config
      * @param  array  $options
-     * @return \Illuminate\Redis\Connections\PhpRedisConnection
+     * @return \WPWhales\Redis\Connections\PhpRedisConnection
      */
     public function connect(array $config, array $options)
     {
@@ -44,7 +44,7 @@ class PhpRedisConnector implements Connector
      * @param  array  $config
      * @param  array  $clusterOptions
      * @param  array  $options
-     * @return \Illuminate\Redis\Connections\PhpRedisClusterConnection
+     * @return \WPWhales\Redis\Connections\PhpRedisClusterConnection
      */
     public function connectToCluster(array $config, array $clusterOptions, array $options)
     {

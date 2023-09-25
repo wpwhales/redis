@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Redis;
+namespace WPWhales\Redis;
 
-use Illuminate\Contracts\Support\DeferrableProvider;
-use Illuminate\Support\Arr;
-use Illuminate\Support\ServiceProvider;
+use WPWhales\Contracts\Support\DeferrableProvider;
+use WPWhales\Support\Arr;
+use WPWhales\Support\ServiceProvider;
 
 class RedisServiceProvider extends ServiceProvider implements DeferrableProvider
 {

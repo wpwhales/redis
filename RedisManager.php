@@ -1,25 +1,25 @@
 <?php
 
-namespace Illuminate\Redis;
+namespace WPWhales\Redis;
 
 use Closure;
-use Illuminate\Contracts\Redis\Factory;
-use Illuminate\Redis\Connections\Connection;
-use Illuminate\Redis\Connectors\PhpRedisConnector;
-use Illuminate\Redis\Connectors\PredisConnector;
-use Illuminate\Support\Arr;
-use Illuminate\Support\ConfigurationUrlParser;
+use WPWhales\Contracts\Redis\Factory;
+use WPWhales\Redis\Connections\Connection;
+use WPWhales\Redis\Connectors\PhpRedisConnector;
+use WPWhales\Redis\Connectors\PredisConnector;
+use WPWhales\Support\Arr;
+use WPWhales\Support\ConfigurationUrlParser;
 use InvalidArgumentException;
 
 /**
- * @mixin \Illuminate\Redis\Connections\Connection
+ * @mixin \WPWhales\Redis\Connections\Connection
  */
 class RedisManager implements Factory
 {
     /**
      * The application instance.
      *
-     * @var \Illuminate\Contracts\Foundation\Application
+     * @var \WPWhales\Contracts\Foundation\Application
      */
     protected $app;
 
@@ -61,7 +61,7 @@ class RedisManager implements Factory
     /**
      * Create a new Redis manager instance.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param  \WPWhales\Contracts\Foundation\Application  $app
      * @param  string  $driver
      * @param  array  $config
      * @return void
@@ -77,7 +77,7 @@ class RedisManager implements Factory
      * Get a Redis connection by name.
      *
      * @param  string|null  $name
-     * @return \Illuminate\Redis\Connections\Connection
+     * @return \WPWhales\Redis\Connections\Connection
      */
     public function connection($name = null)
     {
@@ -96,7 +96,7 @@ class RedisManager implements Factory
      * Resolve the given connection by name.
      *
      * @param  string|null  $name
-     * @return \Illuminate\Redis\Connections\Connection
+     * @return \WPWhales\Redis\Connections\Connection
      *
      * @throws \InvalidArgumentException
      */
@@ -124,7 +124,7 @@ class RedisManager implements Factory
      * Resolve the given cluster connection by name.
      *
      * @param  string  $name
-     * @return \Illuminate\Redis\Connections\Connection
+     * @return \WPWhales\Redis\Connections\Connection
      */
     protected function resolveCluster($name)
     {
@@ -140,9 +140,9 @@ class RedisManager implements Factory
     /**
      * Configure the given connection to prepare it for commands.
      *
-     * @param  \Illuminate\Redis\Connections\Connection  $connection
+     * @param  \WPWhales\Redis\Connections\Connection  $connection
      * @param  string  $name
-     * @return \Illuminate\Redis\Connections\Connection
+     * @return \WPWhales\Redis\Connections\Connection
      */
     protected function configure(Connection $connection, $name)
     {
@@ -158,7 +158,7 @@ class RedisManager implements Factory
     /**
      * Get the connector instance for the current driver.
      *
-     * @return \Illuminate\Contracts\Redis\Connector|null
+     * @return \WPWhales\Contracts\Redis\Connector|null
      */
     protected function connector()
     {

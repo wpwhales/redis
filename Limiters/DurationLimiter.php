@@ -1,16 +1,16 @@
 <?php
 
-namespace Illuminate\Redis\Limiters;
+namespace WPWhales\Redis\Limiters;
 
-use Illuminate\Contracts\Redis\LimiterTimeoutException;
-use Illuminate\Support\Sleep;
+use WPWhales\Contracts\Redis\LimiterTimeoutException;
+use WPWhales\Support\Sleep;
 
 class DurationLimiter
 {
     /**
      * The Redis factory implementation.
      *
-     * @var \Illuminate\Redis\Connections\Connection
+     * @var \WPWhales\Redis\Connections\Connection
      */
     private $redis;
 
@@ -52,7 +52,7 @@ class DurationLimiter
     /**
      * Create a new duration limiter instance.
      *
-     * @param  \Illuminate\Redis\Connections\Connection  $redis
+     * @param  \WPWhales\Redis\Connections\Connection  $redis
      * @param  string  $name
      * @param  int  $maxLocks
      * @param  int  $decay
@@ -74,7 +74,7 @@ class DurationLimiter
      * @param  int  $sleep
      * @return mixed
      *
-     * @throws \Illuminate\Contracts\Redis\LimiterTimeoutException
+     * @throws \WPWhales\Contracts\Redis\LimiterTimeoutException
      */
     public function block($timeout, $callback = null, $sleep = 750)
     {

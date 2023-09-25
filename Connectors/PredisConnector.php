@@ -1,11 +1,11 @@
 <?php
 
-namespace Illuminate\Redis\Connectors;
+namespace WPWhales\Redis\Connectors;
 
-use Illuminate\Contracts\Redis\Connector;
-use Illuminate\Redis\Connections\PredisClusterConnection;
-use Illuminate\Redis\Connections\PredisConnection;
-use Illuminate\Support\Arr;
+use WPWhales\Contracts\Redis\Connector;
+use WPWhales\Redis\Connections\PredisClusterConnection;
+use WPWhales\Redis\Connections\PredisConnection;
+use WPWhales\Support\Arr;
 use Predis\Client;
 
 class PredisConnector implements Connector
@@ -15,7 +15,7 @@ class PredisConnector implements Connector
      *
      * @param  array  $config
      * @param  array  $options
-     * @return \Illuminate\Redis\Connections\PredisConnection
+     * @return \WPWhales\Redis\Connections\PredisConnection
      */
     public function connect(array $config, array $options)
     {
@@ -36,7 +36,7 @@ class PredisConnector implements Connector
      * @param  array  $config
      * @param  array  $clusterOptions
      * @param  array  $options
-     * @return \Illuminate\Redis\Connections\PredisClusterConnection
+     * @return \WPWhales\Redis\Connections\PredisClusterConnection
      */
     public function connectToCluster(array $config, array $clusterOptions, array $options)
     {
